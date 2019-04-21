@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.netoapps2.cafeedenapp.Contacts"
+    tools:context="com.stusdstock.cafecoffee.Contacts"
     android:orientation="vertical">
 
 
@@ -26,8 +26,8 @@
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/common_plus_signin_btn_icon_dark_normal" />
+                android:layout_weight="1"/>
+                <!--app:srcCompat="@drawable/common_plus_signin_btn_icon_dark_normal" -->
 
             <LinearLayout
                 android:layout_width="wrap_content"

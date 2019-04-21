@@ -69,12 +69,12 @@ public class FullImage extends AppCompatActivity {
         ImagemGaleria imagemGaleria = (ImagemGaleria) imageAdapter.getItem(position);
         //Picasso.with(this).load( Uri.parse((String) imageAdapter.getItem(position))).into(imageView);
         //imageView.setImageResource((Integer) imageAdapter.getItem(position));
-        Glide.with(this)
-                .load(imagemGaleria.getUrl())
-                .fitCenter()
-                .placeholder(R.drawable.loading)
-                .crossFade()
-                .into(imageView);
+//        Glide.with(this)
+//                .load(imagemGaleria.getUrl())
+//                .fitCenter()
+//                .placeholder(R.drawable.loading)
+//                .crossFade()
+//                .into(imageView);
         Snackbar snackbar = Snackbar
                 .make((View) imageView.getParent(), (position+1)+"/"+imageAdapter.getCount() + "\nCategoria : "+
                        imagemGaleria.getCategoria() , Snackbar.LENGTH_LONG);

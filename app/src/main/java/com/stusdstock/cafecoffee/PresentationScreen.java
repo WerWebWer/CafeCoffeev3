@@ -32,8 +32,8 @@ public class PresentationScreen extends AppCompatActivity {
         setContentView(R.layout.activity_presentation_screen);
         imageViewLogo = (ImageView) findViewById(R.id.logoCafeImageView);
         imageViewLogoSubText = (ImageView) findViewById(R.id.logoSubTextCafeImageView);
-        addImages(R.drawable.ic_launcher, imageViewLogo);
-        addImages(R.drawable.cafesanckbar, imageViewLogoSubText);
+//        addImages(R.drawable.ic_launcher, imageViewLogo);
+//        addImages(R.drawable.cafesanckbar, imageViewLogoSubText);
 
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent i = new Intent(this, NotificationService.class);

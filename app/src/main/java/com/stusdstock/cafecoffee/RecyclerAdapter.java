@@ -39,12 +39,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Comida item = listaComidas.get(position);
         //holder.textNome.setText(item.getNome());
         holder.textDescricao.setText(item.getDescricao());
-        Glide.with(mContext)
-                .load(item.getPic())
-                .fitCenter()
-                .placeholder(R.drawable.loading)
-                .crossFade()
-                .into(holder.imageComida);
+//        Glide.with(mContext)
+//                .load(item.getPic())
+//                .fitCenter()
+//                .placeholder(R.drawable.loading)
+//                .crossFade()
+//                .into(holder.imageComida);
 
 
     }
