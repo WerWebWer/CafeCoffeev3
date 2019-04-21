@@ -6,6 +6,7 @@ class Comida {
     private String descricao;
     private String pic;
     private String price;
+    //private String price;
 
 
     public Comida(String pic, String name, String descricao, String price){
