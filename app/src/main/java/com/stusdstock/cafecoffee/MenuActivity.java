@@ -1,5 +1,6 @@
 package com.stusdstock.cafecoffee;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -40,7 +41,7 @@ public class MenuActivity extends AppCompatActivity {
 
         Bundle page = new Bundle();
         fragmentList.add(Fragment.instantiate(this,IntroFragment.class.getName(),page));
-        fragmentList.add(Fragment.instantiate(this,GalleryFragment.class.getName(),page));
+        //fragmentList.add(Fragment.instantiate(this,GalleryFragment.class.getName(),page));
         fragmentList.add(Fragment.instantiate(this,ComidasFragment.class.getName(),page));
         fragmentList.add(Fragment.instantiate(this,ContactsFragment.class.getName(),page));
 
@@ -89,7 +90,9 @@ public class MenuActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_shop) {
+            Intent i = new Intent(getApplicationContext(), Contacts.class);
+            startActivity(i);
             return true;
         }
 

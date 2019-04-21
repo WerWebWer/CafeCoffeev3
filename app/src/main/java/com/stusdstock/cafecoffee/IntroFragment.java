@@ -34,8 +34,8 @@ public class IntroFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
              Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.intro_fragment, container, false);
-            TextView text = (TextView) rootView.findViewById(R.id.textView);
-            LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.linearLayoutIntro);
+            //TextView text = (TextView) rootView.findViewById(R.id.textView);
+            //LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.linearLayoutIntro);
 
             //text.setMovementMethod(new ScrollingMovementMethod());
             return rootView;

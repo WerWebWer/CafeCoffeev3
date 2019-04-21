@@ -16,13 +16,10 @@ import com.bumptech.glide.Glide;
 
 public class PresentationScreen extends AppCompatActivity {
 
-
-
     SharedPreferences prefs = null;
 
-
     private ImageView imageViewLogo, imageViewLogoSubText;
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -70,7 +67,7 @@ public class PresentationScreen extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), MenuActivity.class);
                 startActivity(i);
                 */
-            }
+    }
         /*
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {

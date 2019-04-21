@@ -2,7 +2,7 @@
     <string name="app_name">Coffe Cafe</string>
     <string name="menuBotaoContactos">Contacts</string>
     <string name="menuBotaoGaleria">Menu</string>
-    <string name="menuBotaoComida">Sugestions</string>
+    <string name="menuBotaoComida">Profile</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notification</string>
@@ -26,6 +26,7 @@
     O nosso ambiente caseiro fa-lo-á sentir-se em casa onde poderá desfrutar das melhores combinações de sabores.
     \nNão perca também a oportunidade de encomendar os nossos bolos, e surpreender a sua família e amigos.
     \nVisite-nos e venha provar a francesinha à ÉDEN, esperamos por si</string>
+    <string name="title_activity_shop_activitu">ShopActivitu</string>
 
 
 </resources>
