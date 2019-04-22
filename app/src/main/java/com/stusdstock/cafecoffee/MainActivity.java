@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private IntroFragment frag1;
     private ComidasFragment frag2;
     private ContactsFragment frag3;
+    private ShopFragment fragShop;
     private FragmentTransaction fTrans;
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         frag1 = new IntroFragment();
         frag2 = new ComidasFragment();
         frag3 = new ContactsFragment();
+        fragShop = new ShopFragment();
         //client = pahoMqttClient.getMqttClient(getApplicationContext(), Constants.MQTT_BROKER_URL, Constants.CLIENT_ID);
         //Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_LONG).show();
 //
