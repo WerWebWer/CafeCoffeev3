@@ -34,6 +34,13 @@ public class ShopActivity extends AppCompatActivity {
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.frgmShop, fragShop);
         fTrans.commit();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
 
