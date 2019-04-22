@@ -37,7 +37,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         Comida item = listaComidas.get(position);
-        //holder.textNome.setText(item.getNome());
+        holder.textNome.setText(item.getname());
         holder.textDescricao.setText(item.getDescricao());
 //        Glide.with(mContext)
 //                .load(item.getPic())
