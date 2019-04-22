@@ -23,8 +23,7 @@ class Comida {
     private String getPrice() {
         return price;
     }
-
-
+    
     public void setPic(String pic){
         this.pic = pic;
     }

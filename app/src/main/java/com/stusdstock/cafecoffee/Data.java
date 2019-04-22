@@ -5,11 +5,15 @@ import java.util.ArrayList;
 
 public class Data extends Application {
     //ArrayList<ArrayList<ArrayList<String>>> data = new ArrayList<ArrayList<ArrayList<String>>>();
-    private ArrayList<ArrayList> Menu;
+    private ArrayList<ArrayList<String>> Menu;
 
-    public ArrayList<ArrayList> getData(){
-        String[] st = {"1","2","13","21","15","223"};
-        Menu.get(0).add(st);
+    public ArrayList<ArrayList<String>> getData(){
+        ArrayList<String> element = new ArrayList<String>();
+//        element.add("erfer","erfer","erfer");
+//        element.add();
+        element.add("erfer");
+       // Menu.set(0, ArrayList<String>).set(0)="0";
+                Menu.add(element);
         String[] st1 = {"12","2324","3","2123","14535","2323"};
         return Menu;
     }
