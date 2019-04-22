@@ -44,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
+// It's not the kostile
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.frgmCont, frag1);
         fTrans.commit();
+// End not the kostile
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
