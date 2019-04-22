@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ComidasFragment extends Fragment {
 
 
+    private int i=0;
     private static final String ARG_SECTION_NUMBER = "section_number";
     ArrayList<Comida> listaComidas;
 //    public ComidasFragment() {
@@ -64,6 +66,10 @@ public class ComidasFragment extends Fragment {
         rv.setLayoutManager(llm);
 
         listaComidas = new ArrayList<>();
+        for (i=0; i<3; i++){
+            adicionarComida(new Comida("file://drawable/ic_launcher_background","Francesinha", "Blah Blah","1,50"));
+
+        }
         adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
         adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
         RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas);

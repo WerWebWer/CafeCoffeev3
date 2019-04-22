@@ -3,9 +3,9 @@
     <string name="menuBotaoContactos">Contacts</string>
     <string name="menuBotaoGaleria">Menu</string>
     <string name="menuBotaoComida">Profile</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notification</string>
+    <string name="title_home">Main</string>
+    <string name="title_dashboard">Menu</string>
+    <string name="title_notifications">Profile</string>
     <string name="textoBemVindo">Welcome</string>
     <string name="menuBotaoEventos">Events</string>
     <string name="textoCabecalhoMenu">Menu</string>
