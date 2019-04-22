@@ -5,54 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.stusdstock.cafecoffee.Contacts"
     android:orientation="vertical">
-
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:orientation="vertical">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<ImageView-->
-                <!--android:id="@+id/imageView3"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_weight="1"/>-->
-                <!--&lt;!&ndash;app:srcCompat="@drawable/common_plus_signin_btn_icon_dark_normal" &ndash;&gt;-->
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/textView2"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="TextView" />-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/textView3"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="TextView" />-->
-            <!--</LinearLayout>-->
-
-        <!--</LinearLayout>-->
-
-        <!--<Button-->
-            <!--android:id="@+id/button2"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Button" />-->
-    <!--</LinearLayout>-->
 
     <ImageView
         android:id="@+id/line10"
@@ -68,23 +22,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/line10"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:text="Personal Area"
         android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/avatar"
-        android:layout_width="114dp"
-        android:layout_height="135dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_below="@+id/section"
         android:layout_alignParentStart="true"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,37 +47,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:src="@drawable/user_par" />
+        android:src="@drawable/user_par" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/avatar"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="13dp"
         android:layout_toEndOf="@+id/avatar"
+        android:fontFamily="@font/bree_serif"
         android:text="Лучший Постановщик"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="23dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/name"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/avatar"
+        android:src="@drawable/favourites" />
+
+    <ImageView
+        android:id="@+id/star3"
+        android:layout_width="23dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/name"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/star2"
+        android:src="@drawable/favourites" />
+
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="33dp"
+        android:layout_height="26dp"
+        android:layout_below="@+id/name"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/star"
+        android:src="@drawable/favourites" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/avatar"
-        android:text="Title"
-        android:textSize="18sp"/>
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/star3"
+        android:text="Кофеман"
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/line11"
         android:layout_below="@+id/avatar"
         android:layout_width="match_parent"
+        android:layout_marginTop="3dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:layout_height="7dp"
@@ -190,7 +178,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button4"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="8dp"
         android:background="@color/trans"
         android:text="    Exit"
@@ -201,13 +189,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/line15"
-        android:layout_below="@+id/button5"
-        android:layout_width="match_parent"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_height="2dp"
-        app:srcCompat="@android:color/darker_gray" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toEndOf="@+id/avatar"
+        android:max="5000"
+        android:progress="3700" />
+
+    <TextView
+        android:id="@+id/exp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressBar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="0dp"
+        android:text="3700/5000"
+        android:textSize="10sp" />
 
 </RelativeLayout>
