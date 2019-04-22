@@ -57,7 +57,7 @@ public class PresentationScreen extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent i = new Intent(PresentationScreen.this, MenuActivity.class);
+                        Intent i = new Intent(PresentationScreen.this, MainActivity.class);
                         startActivity(i);
                         finish();
                     }
