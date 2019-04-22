@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_shop) {
-            Intent i = new Intent(getApplicationContext(), Contacts.class);
+            Intent i = new Intent(getApplicationContext(), ShopActivity.class);
             startActivity(i);
             return true;
         }
