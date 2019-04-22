@@ -66,8 +66,9 @@ public class ComidasFragment extends Fragment {
         listaComidas = new ArrayList<>();
         adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
         adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-
-        return inflater.inflate(R.layout.lista_comidas_view, null);
+        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas);
+        rv.setAdapter(adapterComida);
+        return rootView;
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
