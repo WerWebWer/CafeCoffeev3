@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Timer;
+
 public class PresentationScreen extends AppCompatActivity {
 
     SharedPreferences prefs = null;
@@ -29,15 +31,12 @@ public class PresentationScreen extends AppCompatActivity {
         setContentView(R.layout.activity_presentation_screen);
         imageViewLogo = (ImageView) findViewById(R.id.logoCafeImageView);
         imageViewLogoSubText = (ImageView) findViewById(R.id.logoSubTextCafeImageView);
-//        addImages(R.drawable.ic_launcher, imageViewLogo);
-//        addImages(R.drawable.cafesanckbar, imageViewLogoSubText);
 
         AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent i = new Intent(this, NotificationService.class);
         PendingIntent pi = PendingIntent.getService(this, 0, i, 0);
         am.cancel(pi);
         int minutes =1 ;
-        // by my own convention, minutes <= 0 means notifications are disabled
         if (minutes > 0) {
             am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                     SystemClock.elapsedRealtime() + minutes*60*1000,
@@ -68,15 +67,18 @@ public class PresentationScreen extends AppCompatActivity {
                 startActivity(i);
                 */
     }
-        /*
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                Intent i = new Intent();
-            }
-        }, 100);
-        */
+
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                Intent i = new Intent();
+//            }
+//        }, 100);
+
+//    startActivity(intent);
+//    overridePendingTransition(R.anim.activity_open_enter,0);
+
 
     @Override
     protected void onResume() {
@@ -96,21 +98,16 @@ public class PresentationScreen extends AppCompatActivity {
                 .into(destino);
 
     }
+    @Override
+    protected void onPause (){
+        super.onPause();
+        overridePendingTransition(R.anim.activity_close_bottom,0);
 
-
-
-
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.activity_close_bottom,0);
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

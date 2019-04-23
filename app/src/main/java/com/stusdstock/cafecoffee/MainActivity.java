@@ -34,27 +34,15 @@ public class MainActivity extends AppCompatActivity {
         frag1 = new IntroFragment();
         frag2 = new ComidasFragment();
         frag3 = new ContactsFragment();
-        fragShop = new ShopFragment();
-        //client = pahoMqttClient.getMqttClient(getApplicationContext(), Constants.MQTT_BROKER_URL, Constants.CLIENT_ID);
-        //Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_LONG).show();
-//
-//        fTrans = getFragmentManager().beginTransaction();
-//        fTrans.add(R.id.container, frag1);
-//        fTrans.commit();
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
-// It's not the kostile
+        fragShop = new ShopFragment();
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.frgmCont, frag1);
         fTrans.commit();
-// End not the kostile
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-//        Intent intent = new Intent(MainActivity.this, MqttMessageService.class);
-//        startService(intent);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -71,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     fTrans = getFragmentManager().beginTransaction();
                     fTrans.replace(R.id.frgmCont, frag2);
                     fTrans.commit();
-//                    DashboardFragment dashboardFragment = new DashboardFragment();
-//                    FragmentManager manager = getSupportFragmentManager();
-//                    manager.beginTransaction().replace(R.id.main_container, frag2).commit();
                     Log.d("Click", "Dashboard");
                     return true;
                 case R.id.navigation_notifications:
@@ -91,27 +76,31 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_shop) {
             Intent i = new Intent(getApplicationContext(), ShopActivity.class);
             startActivity(i);
+            overridePendingTransition(R.anim.activity_open_enter,0);
+
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.activity_close_bottom,0);
     }
 
 }

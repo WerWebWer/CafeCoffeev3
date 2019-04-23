@@ -1,6 +1,9 @@
 package com.stusdstock.cafecoffee;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -8,7 +11,9 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.TransitionRes;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +21,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by pedroneto on 01/10/16.‹
@@ -23,21 +30,118 @@ import android.widget.Button;
 public class ContactsFragment extends Fragment {
 
     Button set;
+    Button out;
+    Context context;
+    String title = "Выбор есть всегда";
+    String message = "Выбери пищу";
+    String button1String = "Вкусная пища";
+    String button2String = "Здоровая пища";
+    AlertDialog.Builder ad;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+    @NonNull
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        String title = "Выбор есть всегда";
+        String message = "Выбери пищу";
+        String button1String = "Вкусная пища";
+        String button2String = "Здоровая пища";
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(title);  // заголовок
+        builder.setMessage(message); // сообщение
+        builder.setPositiveButton(button1String, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Toast.makeText(getActivity().getApplicationContext(), "Вы сделали правильный выбор",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Toast.makeText(getActivity().getApplicationContext(), "Возможно вы правы", Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+        builder.setCancelable(true);
+
+        return builder.create();
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_contacts, container, false);
 
-        set = (Button) rootView.findViewById(R.id.button6);
+        context = this.getActivity().getApplicationContext();
+
+        View.OnClickListener action1 = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Uri uriIntentMap = Uri.parse("geo:0,0?q=1600" + Uri.encode("R. Sousa Aroso 447, 4450-289, Matosinhos"));
+//                Intent i = new Intent(Intent.ACTION_VIEW, uriIntentMap);
+//                i.setPackage("com.google.android.apps.maps");
+//                if (i.resolveActivity(getActivity().getPackageManager()) != null)
+//                    startActivity(i);
+//                else {
+//                    //mapText.setText(R.string.botaoIndisponivel);
+//
+//                }
+            }
+        };
+        TextView rating = (TextView) rootView.findViewById(R.id.rating);
+        rating.setOnClickListener(action1);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//        ad = new AlertDialog.Builder(context);
+//        ad.setTitle(title);  // заголовок
+//        ad.setMessage(message); // сообщение
+//        ad.setPositiveButton(button1String, new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int arg1) {
+//                Toast.makeText(context, "Вы сделали правильный выбор",
+//                        Toast.LENGTH_LONG).show();
+//            }
+//        });
+//        ad.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int arg1) {
+//                Toast.makeText(context, "Возможно вы правы", Toast.LENGTH_LONG)
+//                        .show();
+//            }
+//        });
+//        ad.setCancelable(true);
+//        ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
+//            public void onCancel(DialogInterface dialog) {
+//                Toast.makeText(context, "Вы ничего не выбрали",
+//                        Toast.LENGTH_LONG).show();
+//            }
+//        });
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        final Bundle savedInstanceState1 = savedInstanceState;
+
+        set = (Button) rootView.findViewById(R.id.button5);
+        out = (Button) rootView.findViewById(R.id.button6);
+
+        set= (Button) rootView.findViewById(R.id.button5);
         set.setOnClickListener(new View.OnClickListener()        {
             @Override
             public void onClick(View v)            {
                 Intent i = new Intent(getActivity(), Settings.class);
                 startActivity(i);
+
+
             }
         });
-
+        out = (Button) rootView.findViewById(R.id.button6);
+        out.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //ad.show();
+                onCreateDialog(savedInstanceState1).show();
+            }
+        });
         return rootView;
     }
     @Override
