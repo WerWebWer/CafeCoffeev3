@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1030386304626",
+    "firebase_url": "https://easy-coffee-6105e.firebaseio.com",
+    "project_id": "easy-coffee-6105e",
+    "storage_bucket": "easy-coffee-6105e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030386304626:android:645210afabcadd8b",
+        "android_client_info": {
+          "package_name": "com.stusdstock.cafecoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030386304626-hdg0b4ih5teoek2q00ef9ne0095k3bi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvW1WWj_RRLUooxuTB500kftmnjnD1Qj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030386304626-hdg0b4ih5teoek2q00ef9ne0095k3bi0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
