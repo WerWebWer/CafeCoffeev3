@@ -80,18 +80,17 @@
         android:layout_toEndOf="@+id/star"
         android:src="@drawable/favourites" />
 
-    <Button
+    <TextView
         android:id="@+id/rating"
         android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_below="@+id/name"
-        android:textColor="@color/colorBro"
         android:layout_marginStart="9dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/star3"
         android:background="@color/trans"
-        android:text="Кофеман"
-        android:textSize="18sp" />
+        android:text="Бетховен"
+        android:textSize="17sp" />
 
     <ImageView
         android:id="@+id/line11"
@@ -115,8 +114,8 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="13dp"
         android:layout_toEndOf="@+id/avatar"
-        android:max="5000"
-        android:progress="3700" />
+        android:max="200"
+        android:progress="157" />
 
     <TextView
         android:id="@+id/exp"
@@ -126,7 +125,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="0dp"
-        android:text="3700/5000"
+        android:text="175/200"
         android:textSize="10sp" />
 
     <LinearLayout
