@@ -57,7 +57,16 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
                   notifyDataSetChanged();
               }
           });
-
+        switch (Data.Menu.get(position).Id){
+            case 0:holder.imageComida.setBackgroundResource(R.drawable.fon0);
+            case 1:holder.imageComida.setBackgroundResource(R.drawable.fon1);
+            case 2:holder.imageComida.setBackgroundResource(R.drawable.fon2);
+            case 3:holder.imageComida.setBackgroundResource(R.drawable.fon3);
+            case 4:holder.imageComida.setBackgroundResource(R.drawable.fon4);
+            case 5:holder.imageComida.setBackgroundResource(R.drawable.fon5);
+            case 6:holder.imageComida.setBackgroundResource(R.drawable.fon6);
+            case 7:holder.imageComida.setBackgroundResource(R.drawable.fon7);
+        }
     }
 
     @Override
