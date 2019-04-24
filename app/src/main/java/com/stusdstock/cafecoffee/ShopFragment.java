@@ -1,20 +1,26 @@
 package com.stusdstock.cafecoffee;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class ShopFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    ArrayList<Comida> listaComidas;
+    private Button pay;
+
 
     String pho = "https://turboportal.ru/uploads/posts/2014-05/thumbs/1399971466__.jpg";
 
@@ -24,9 +30,6 @@ public class ShopFragment extends Fragment {
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
-    }
-    public void adicionarComida(Comida comida){
-        if (!listaComidas.contains(comida)) listaComidas.add(comida);
     }
 
     @Override
@@ -38,12 +41,21 @@ public class ShopFragment extends Fragment {
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
-
-//        listaComidas = new ArrayList<>();
-//        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
-//        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        BuyAdapter adapterComida = new BuyAdapter(getContext(), Data.shop_list);
+        ShopListAdapter adapterComida = new ShopListAdapter(getContext(), Data.shop_list);
         rv.setAdapter(adapterComida);
+        final RecyclerView rv_1 = rv;
+
+        pay = rootView.findViewById(R.id.button_pay);
+        pay.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Data.history.add(Data.shop_list);
+                Data.shop_list.clear();
+
+                ShopListAdapter adapterComida = new ShopListAdapter(getContext(), Data.shop_list);
+                rv_1.setAdapter(adapterComida);
+            }
+        });
         return rootView;
     }
 

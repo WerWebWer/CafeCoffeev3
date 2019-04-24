@@ -6,20 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder>{
 
     private Comida item;
     private Context mContext;
-    private List<Comida> listaComidas;
+    private ArrayList<ArrayList<Comida>> listaComidas;
 
 
-    public BuyAdapter(Context context, List<Comida> comidas){
+    public HistoryAdapter(Context context, ArrayList<ArrayList<Comida>> comidas){
         mContext = context;
         LayoutInflater mLayoutInflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,19 +41,22 @@ public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final int pos = position;
-        item = listaComidas.get(position);
-        holder.textNome.setText(item.getname());
-        holder.textDescricao.setText(item.getDescricao());
+        //item = listaComidas.get(position);
+        holder.textNome.setText("Order #"+position);
+        String a = new String();
+        for (int i=0;i<Data.history.get(position).size();i++){
+            a+=  Data.history.get(position).get(i).getname()+'\n';
+        }
+        holder.textDescricao.setText(a);
         holder.but.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
                 //Toast.makeText(mContext,"1",Toast.LENGTH_LONG).show();
-                Data.shop_list.add(item);
+
             }
         });
-        holder.imageComida.setBackgroundResource(R.drawable.fon);
 
     }
 
@@ -67,16 +70,15 @@ public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
         TextView textNome;
         TextView textDescricao;
         ImageView imageComida;
-        ImageButton imageButton;
         Button but;
+
 
         public ViewHolder(final View itemView){
             super(itemView);
-            textDescricao= (TextView) itemView.findViewById(R.id.descricaoComida);
-            textNome = (TextView) itemView.findViewById(R.id.nomeComida);
-            imageComida = (ImageView) itemView.findViewById(R.id.fotoComida);
-            but = (Button) itemView.findViewById(R.id.delete);
-            but.setText("Pay");
+            textDescricao = (TextView) itemView.findViewById(R.id.hisory_item);
+            textNome = (TextView) itemView.findViewById(R.id.history_name);
+            but = (Button) itemView.findViewById(R.id.history_button);
+            //but.setText("Pay");
 
         }
     }

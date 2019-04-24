@@ -2,6 +2,7 @@ package com.stusdstock.cafecoffee;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.TransitionRes;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
+import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +30,10 @@ import android.widget.Toast;
  */
 public class ContactsFragment extends Fragment {
 
+    private HistoryFragment fragHis;
+    private FragmentTransaction fTrans;
+
+    Button his;
     Button set;
     Button out;
     Context context;
@@ -121,10 +126,21 @@ public class ContactsFragment extends Fragment {
 
         final Bundle savedInstanceState1 = savedInstanceState;
 
-        set = (Button) rootView.findViewById(R.id.button5);
-        out = (Button) rootView.findViewById(R.id.button6);
+//        set = (Button) rootView.findViewById(R.id.button5);
+//        out = (Button) rootView.findViewById(R.id.button6);
 
-        set= (Button) rootView.findViewById(R.id.button5);
+        his= (Button) rootView.findViewById(R.id.button3);
+        his.setOnClickListener(new View.OnClickListener()        {
+            @Override
+            public void onClick(View v)            {
+                //Toast.makeText(getContext(),"Пашол нахуй",Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getActivity(), HistoryActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        set= (Button) rootView.findViewById(R.id.button4);
         set.setOnClickListener(new View.OnClickListener()        {
             @Override
             public void onClick(View v)            {
