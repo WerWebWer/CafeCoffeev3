@@ -80,14 +80,16 @@
         android:layout_toEndOf="@+id/star"
         android:src="@drawable/favourites" />
 
-    <TextView
+    <Button
         android:id="@+id/rating"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="26dp"
         android:layout_below="@+id/name"
+        android:textColor="@color/colorBro"
         android:layout_marginStart="9dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/star3"
+        android:background="@color/trans"
         android:text="Кофеман"
         android:textSize="18sp" />
 

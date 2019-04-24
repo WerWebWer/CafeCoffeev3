@@ -26,6 +26,7 @@ public class ContactsFragment extends Fragment {
     private FragmentTransaction fTrans;
 
     Button his;
+    TextView rat;
     Button set;
     Button out;
     Button ab;
@@ -172,6 +173,14 @@ public class ContactsFragment extends Fragment {
             public void onClick(View v){
                 //ad.show();
                 onCreateDialog(savedInstanceState1).show();
+            }
+        });
+        TextView rat = (TextView) findViewById(R.id.rating);
+        rat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_DIAL, );
+                startActivity(i);
             }
         });
         return rootView;
