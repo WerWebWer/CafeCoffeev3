@@ -76,6 +76,7 @@ public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
             textNome = (TextView) itemView.findViewById(R.id.nomeComida);
             imageComida = (ImageView) itemView.findViewById(R.id.fotoComida);
             but = (Button) itemView.findViewById(R.id.delete);
+            but.setText("Pay");
 
         }
     }

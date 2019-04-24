@@ -35,19 +35,14 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
                 parent.getContext()).inflate(
                 R.layout.elemento_lista_comida,
                 parent,false);
-//        } else {
-//            itemView = LayoutInflater.from(
-//                    parent.getContext()).inflate(
-//                    R.layout.elemento_lista_comida_2,
-//                    parent,false);
-//        }
+
         return new ViewHolder (itemView);
 
 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         final int pos = position;
         item = listaComidas.get(position);
         holder.textNome.setText(item.getname());
@@ -57,7 +52,9 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
               @Override
               public void onClick(View arg0) {
                   //Data.deleteShop(item.getname());
-                  Toast.makeText(mContext, "2", Toast.LENGTH_LONG).show();
+                  //Toast.makeText(mContext, "Delete from Shop List", Toast.LENGTH_LONG).show();
+                  Data.shop_list.remove(position);
+                  notifyDataSetChanged();
               }
           });
 
@@ -82,6 +79,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
             textNome = (TextView) itemView.findViewById(R.id.nomeComida);
             imageComida = (ImageView) itemView.findViewById(R.id.fotoComida);
             but = (Button) itemView.findViewById(R.id.delete);
+            but.setText("Delete");
         }
     }
 }
