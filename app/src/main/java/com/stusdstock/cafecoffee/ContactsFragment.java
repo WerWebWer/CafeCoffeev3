@@ -2,23 +2,15 @@ package com.stusdstock.cafecoffee;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.TransitionRes;
-import android.support.design.widget.BottomNavigationView;
-import android.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -36,6 +28,7 @@ public class ContactsFragment extends Fragment {
     Button his;
     Button set;
     Button out;
+    Button ab;
     Context context;
     String title = "Выбор есть всегда";
     String message = "Выбери пищу";
@@ -46,28 +39,43 @@ public class ContactsFragment extends Fragment {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        String title = "Выбор есть всегда";
-        String message = "Выбери пищу";
-        String button1String = "Вкусная пища";
-        String button2String = "Здоровая пища";
+        String title = "Exit";
+        String message = "Are you sure?";
+        String button1String = "Exit";
+        String button2String = "Cancel";
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(title);  // заголовок
         builder.setMessage(message); // сообщение
         builder.setPositiveButton(button1String, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getActivity().getApplicationContext(), "Вы сделали правильный выбор",
+                Toast.makeText(getActivity().getApplicationContext(), "Возможно вы правы",
                         Toast.LENGTH_LONG).show();
             }
         });
         builder.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getActivity().getApplicationContext(), "Возможно вы правы", Toast.LENGTH_LONG)
+                Toast.makeText(getActivity().getApplicationContext(), "Вы сделали правильный выбор", Toast.LENGTH_LONG)
                         .show();
             }
         });
         builder.setCancelable(true);
 
+        return builder.create();
+    }
+
+    @NonNull
+    public Dialog onCreateDialog_lol(Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("About")
+                .setMessage("Это beta-версия. Данное приложение разработана тремя разработчиками. И будет в последствии развиваться и расширяться. Следите за обновлениями.")
+                .setIcon(R.drawable.ic_launcher)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Закрываем окно
+                        dialog.cancel();
+                    }
+                });
         return builder.create();
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,6 +156,14 @@ public class ContactsFragment extends Fragment {
                 startActivity(i);
 
 
+            }
+        });
+        ab = (Button) rootView.findViewById(R.id.button5);
+        ab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //ad.show();
+                onCreateDialog_lol(savedInstanceState1).show();
             }
         });
         out = (Button) rootView.findViewById(R.id.button6);

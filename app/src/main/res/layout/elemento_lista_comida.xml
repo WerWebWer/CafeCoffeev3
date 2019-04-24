@@ -25,11 +25,10 @@
             <ImageView
                 android:id="@+id/fotoComida"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_margin="6dp"
-                android:layout_weight="0.60"
-                android:src="@drawable/cafesanckbar" />
+                android:layout_weight="0.60"/>
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="0dp"
