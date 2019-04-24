@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Data extends Application {
+    String pho = "https://turboportal.ru/uploads/posts/2014-05/thumbs/1399971466__.jpg";
     //ArrayList<ArrayList<ArrayList<String>>> data = new ArrayList<ArrayList<ArrayList<String>>>();
-    private ArrayList<ArrayList<String>> Menu;
+    public static ArrayList<Comida> Menu;
+
 
     public static ArrayList<Comida> shop_list = new ArrayList<Comida>();
     public static  ArrayList<ArrayList<Comida>> history = new ArrayList();

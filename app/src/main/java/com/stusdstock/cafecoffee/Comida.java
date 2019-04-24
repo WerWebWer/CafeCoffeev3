@@ -6,6 +6,7 @@ class Comida {
     private String descricao;
     private String pic;
     private String price;
+    public  int Id=-1;
     //private String price;
 
 
@@ -14,6 +15,14 @@ class Comida {
         setDescricao(descricao);
         setname(name);
         setPrice(price);
+    }
+
+    public Comida(String pic, String name, String descricao, String price,int i){
+        setPic(pic);
+        setDescricao(descricao);
+        setname(name);
+        setPrice(price);
+        Id=i;
     }
 
     private void setPrice(String price) {

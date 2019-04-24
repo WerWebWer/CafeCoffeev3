@@ -31,7 +31,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         View itemView = null;
         itemView = LayoutInflater.from(
                 parent.getContext()).inflate(
-                R.layout.elemento_lista_comida,
+                R.layout.elemento_history,
                 parent,false);
         return new ViewHolder (itemView);
 
@@ -43,9 +43,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         final int pos = position;
         //item = listaComidas.get(position);
         holder.textNome.setText("Order #"+position);
+        ArrayList<Comida> arr = Data.history.get(position);
         String a = new String();
-        for (int i=0;i<Data.history.get(position).size();i++){
-            a+=  Data.history.get(position).get(i).getname()+'\n';
+        for (int i=0;i<arr.size();i++){
+            a=a + arr.get(i).getname()+'\n';
         }
         holder.textDescricao.setText(a);
         holder.but.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +70,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
 
         TextView textNome;
         TextView textDescricao;
-        ImageView imageComida;
+        //ImageView imageComida;
         Button but;
 
 

@@ -44,11 +44,11 @@ public class IntroFragment extends Fragment {
         rv.setLayoutManager(llm);
 
         listaComidas = new ArrayList<>();
-        adicionarComida(new Comida(pho,"Sale 1", "1+1=2","!!!!"),listaComidas);
-        adicionarComida(new Comida(pho, "Sale 2", "1+1=3","!!!!"),listaComidas);
-        adicionarComida(new Comida(pho, "Sale 3", "1 Бесплатно!!","!!!!"),listaComidas);
-        adicionarComida(new Comida(pho, "Sale 4", "1+1=1","!!!!"),listaComidas);
-        adicionarComida(new Comida(pho, "Sale 5", "День Рождения","!!!!"),listaComidas);
+        adicionarComida(new Comida(pho,"Эспрессо ", "Espresso / Крепкий, яркий, насыщенный, основа всех кофейных напитков","Buy 60р/30мл",0),listaComidas);
+        adicionarComida(new Comida(pho, "Латте ", "Latte / Эспрессо, молоко, взбитое на пару и немного молочной пены","Buy 130р/300мл",1),listaComidas);
+        adicionarComida(new Comida(pho, "Капуччино  ", "Cappuccino / Эспрессо, молоко, взбитое на пару и плотная молочная пена","Buy 110р/200мл",2),listaComidas);
+        adicionarComida(new Comida(pho, "Американо  ", "Americano / Двойная порция классического эспрессо, смягченная добавлением горячей воды","Buy 110р/250мл",4),listaComidas);
+        adicionarComida(new Comida(pho, "Горячий шоколад  ", "Горячий шоколад ","Buy 130р/300мл"),listaComidas);
         ActionAdapter adapterComida = new ActionAdapter(getContext(), listaComidas);
         rv.setAdapter(adapterComida);
 
@@ -59,11 +59,11 @@ public class IntroFragment extends Fragment {
         rv_1.setLayoutManager(llm1);
 
         listaComidas_1 = new ArrayList<>();
-        adicionarComida(new Comida(pho,"Эспрессо ", "Espresso / Крепкий, яркий, насыщенный, основа всех кофейных напитков","Buy 60р/30мл"),listaComidas_1);
-        adicionarComida(new Comida(pho, "Латте ", "Latte / Эспрессо, молоко, взбитое на пару и немного молочной пены","Buy 130р/300мл"),listaComidas_1);
-        adicionarComida(new Comida(pho, "Капуччино  ", "Cappuccino / Эспрессо, молоко, взбитое на пару и плотная молочная пена","Buy 110р/200мл"),listaComidas_1);
-        adicionarComida(new Comida(pho, "Американо  ", "Americano / Двойная порция классического эспрессо, смягченная добавлением горячей воды","Buy 110р/250мл"),listaComidas_1);
-        adicionarComida(new Comida(pho, "Горячий шоколад  ", "Горячий шоколад ","Buy 130р/300мл"),listaComidas_1);
+        adicionarComida(new Comida(pho,"Эспрессо ", "Espresso / Крепкий, яркий, насыщенный, основа всех кофейных напитков","Buy 60р/30мл",0),listaComidas_1);
+        adicionarComida(new Comida(pho, "Латте ", "Latte / Эспрессо, молоко, взбитое на пару и немного молочной пены","Buy 130р/300мл",1),listaComidas_1);
+        adicionarComida(new Comida(pho, "Капуччино  ", "Cappuccino / Эспрессо, молоко, взбитое на пару и плотная молочная пена","Buy 110р/200мл",2),listaComidas_1);
+        adicionarComida(new Comida(pho, "Американо  ", "Americano / Двойная порция классического эспрессо, смягченная добавлением горячей воды","Buy 110р/250мл",3),listaComidas_1);
+        adicionarComida(new Comida(pho, "Горячий шоколад  ", "Горячий шоколад ","Buy 130р/300мл",4),listaComidas_1);
 
         BuyAdapter adapterComida_1 = new BuyAdapter(getContext(), listaComidas_1);
         rv_1.setAdapter(adapterComida_1);

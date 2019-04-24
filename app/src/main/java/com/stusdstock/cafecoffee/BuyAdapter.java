@@ -9,11 +9,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
-
+    String te;
     private Comida item;
     private Context mContext;
     private List<Comida> listaComidas;
@@ -39,9 +40,9 @@ public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        final int pos = position;
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         item = listaComidas.get(position);
+
         holder.textNome.setText(item.getname());
         holder.textDescricao.setText(item.getDescricao());
         holder.but.setOnClickListener(new View.OnClickListener() {
@@ -49,11 +50,12 @@ public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-                //Toast.makeText(mContext,"1",Toast.LENGTH_LONG).show();
-                Data.shop_list.add(item);
+                Toast.makeText(mContext,holder.textNome.getText(), Toast.LENGTH_LONG).show();
+                Data.shop_list.add(Data.Menu.get(position));
+
             }
         });
-        switch (position){
+        switch (Data.Menu.get(position).Id){
             case 0:holder.imageComida.setBackgroundResource(R.drawable.fon0);
             case 1:holder.imageComida.setBackgroundResource(R.drawable.fon1);
             case 2:holder.imageComida.setBackgroundResource(R.drawable.fon2);

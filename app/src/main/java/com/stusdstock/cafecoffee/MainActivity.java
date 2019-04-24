@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +23,26 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction fTrans;
 
     String TAG = "DataBase";
+    ArrayList<Comida> listaComidas;
+    String pho = "https://turboportal.ru/uploads/posts/2014-05/thumbs/1399971466__.jpg";
+
+    public void setMenu(){
+        listaComidas = new ArrayList<>();
+        adicionarComida(new Comida(pho,"Эспрессо ", "Espresso / Крепкий, яркий, насыщенный, основа всех кофейных напитков","Buy 60р/30мл",0));
+        adicionarComida(new Comida(pho, "Латте ", "Latte / Эспрессо, молоко, взбитое на пару и немного молочной пены","Buy 130р/300мл",1));
+        adicionarComida(new Comida(pho, "Капуччино  ", "Cappuccino / Эспрессо, молоко, взбитое на пару и плотная молочная пена","Buy 110р/200мл",2));
+        adicionarComida(new Comida(pho, "Флэт Уайт ", "Приготовлен на основе двойного ристретто и молока, подогретого на пару, с небольшим количеством пены, молоко очень жидкое. ","Buy 150р/220",3));
+        adicionarComida(new Comida(pho, "Латте карамель  ", "Эспрессо п/ф, молоко, карамельный соус п/ф (сахар, молоко, растительные сливки, ванилин)","Buy 180р/250мл",4));
+        adicionarComida(new Comida(pho, "Латте сингапур  ", "Новый авторский латте с добавлением фирменного карамельно-лимонного топпинга","Buy 180р/250мл",5));
+        adicionarComida(new Comida(pho, "Американо  ", "Americano / Двойная порция классического эспрессо, смягченная добавлением горячей воды","Buy 110р/250мл",6));
+        adicionarComida(new Comida(pho, "Горячий шоколад  ", "Горячий шоколад ","Buy 130р/300мл",7));
+        Data.Menu =listaComidas;
+    }
+
+    public void adicionarComida(Comida comida){
+        if (!listaComidas.contains(comida)) listaComidas.add(comida);
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        setMenu();
     }
 
 

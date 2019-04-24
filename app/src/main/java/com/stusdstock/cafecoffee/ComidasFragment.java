@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -64,16 +65,8 @@ public class ComidasFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
 
-        listaComidas = new ArrayList<>();
-        adicionarComida(new Comida(pho,"Эспрессо ", "Espresso / Крепкий, яркий, насыщенный, основа всех кофейных напитков","Buy 60р/30мл"));
-        adicionarComida(new Comida(pho, "Латте ", "Latte / Эспрессо, молоко, взбитое на пару и немного молочной пены","Buy 130р/300мл"));
-        adicionarComida(new Comida(pho, "Капуччино  ", "Cappuccino / Эспрессо, молоко, взбитое на пару и плотная молочная пена","Buy 110р/200мл"));
-        adicionarComida(new Comida(pho, "Флэт Уайт ", "Приготовлен на основе двойного ристретто и молока, подогретого на пару, с небольшим количеством пены, молоко очень жидкое. ","Buy 150р/220"));
-        adicionarComida(new Comida(pho, "Латте карамель  ", "Эспрессо п/ф, молоко, карамельный соус п/ф (сахар, молоко, растительные сливки, ванилин)","Buy 180р/250мл"));
-        adicionarComida(new Comida(pho, "Латте сингапур  ", "Новый авторский латте с добавлением фирменного карамельно-лимонного топпинга","Buy 180р/250мл"));
-        adicionarComida(new Comida(pho, "Американо  ", "Americano / Двойная порция классического эспрессо, смягченная добавлением горячей воды","Buy 110р/250мл"));
-        adicionarComida(new Comida(pho, "Горячий шоколад  ", "Горячий шоколад ","Buy 130р/300мл"));
-        BuyAdapter adapterComida = new BuyAdapter(getContext(), listaComidas);
+
+        BuyAdapter adapterComida = new BuyAdapter(getContext(), Data.Menu);
         rv.setAdapter(adapterComida);
         return rootView;
     }

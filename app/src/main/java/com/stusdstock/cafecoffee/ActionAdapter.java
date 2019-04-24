@@ -48,7 +48,7 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionAdapter.ViewHolder
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext,"Пашол нахуй",Toast.LENGTH_LONG).show();
+                //Toast.makeText(mContext,"Пашол нахуй",Toast.LENGTH_LONG).show();
             }
         });
     }

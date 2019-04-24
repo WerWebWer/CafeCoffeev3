@@ -51,9 +51,8 @@ public class ShopFragment extends Fragment {
             public void onClick(View arg0) {
                 Data.history.add(Data.shop_list);
                 Data.shop_list.clear();
-
-                ShopListAdapter adapterComida = new ShopListAdapter(getContext(), Data.shop_list);
-                rv_1.setAdapter(adapterComida);
+//                ShopActivity.onStop();
+//                onBackPressed();
             }
         });
         return rootView;

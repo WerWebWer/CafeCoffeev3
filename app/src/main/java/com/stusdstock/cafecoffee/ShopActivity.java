@@ -46,5 +46,9 @@ public class ShopActivity extends AppCompatActivity {
         return true;
     }
 
+    public void onStop() {
+
+        super.onStop();
+    }
 
 }

@@ -175,14 +175,14 @@ public class ContactsFragment extends Fragment {
                 onCreateDialog(savedInstanceState1).show();
             }
         });
-        TextView rat = (TextView) findViewById(R.id.rating);
-        rat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_DIAL, );
-                startActivity(i);
-            }
-        });
+//        TextView rat = (TextView) findViewById(R.id.rating);
+//        rat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Intent.ACTION_DIAL, );
+//                startActivity(i);
+//            }
+//        });
         return rootView;
     }
     @Override
