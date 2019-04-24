@@ -41,10 +41,10 @@ public class ShopFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
 
-        listaComidas = new ArrayList<>();
-        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
-        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas);
+//        listaComidas = new ArrayList<>();
+//        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
+//        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
+        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), Data.shop_list,2);
         rv.setAdapter(adapterComida);
         return rootView;
     }

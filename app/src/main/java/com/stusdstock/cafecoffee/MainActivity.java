@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         frag1 = new IntroFragment();
         frag2 = new ComidasFragment();
         frag3 = new ContactsFragment();
-
         fragShop = new ShopFragment();
+
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.frgmCont, frag1);
         fTrans.commit();
