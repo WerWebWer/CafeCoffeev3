@@ -72,7 +72,7 @@ public class ComidasFragment extends Fragment {
         }
         adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
         adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas);
+        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas,1);
         rv.setAdapter(adapterComida);
         return rootView;
     }

@@ -48,7 +48,7 @@ public class IntroFragment extends Fragment {
         listaComidas = new ArrayList<>();
         adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
         adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas);
+        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas,2);
         rv.setAdapter(adapterComida);
 
 
@@ -61,7 +61,7 @@ public class IntroFragment extends Fragment {
         adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
         adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
 
-        RecyclerAdapter adapterComida_1 = new RecyclerAdapter(getContext(), listaComidas);
+        RecyclerAdapter adapterComida_1 = new RecyclerAdapter(getContext(), listaComidas,1);
         rv_1.setAdapter(adapterComida_1);
         return rootView;
     }
