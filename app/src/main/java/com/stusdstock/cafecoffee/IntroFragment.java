@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -31,8 +29,8 @@ public class IntroFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    public void adicionarComida(Comida comida){
-        if (!listaComidas.contains(comida)) listaComidas.add(comida);
+    public void adicionarComida(Comida comida, ArrayList list){
+        if (!list.contains(comida)) list.add(comida);
     }
 
     @Override
@@ -46,9 +44,9 @@ public class IntroFragment extends Fragment {
         rv.setLayoutManager(llm);
 
         listaComidas = new ArrayList<>();
-        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
-        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas,2);
+        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"),listaComidas);
+        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"),listaComidas);
+        ActionAdapter adapterComida = new ActionAdapter(getContext(), listaComidas);
         rv.setAdapter(adapterComida);
 
 
@@ -58,10 +56,10 @@ public class IntroFragment extends Fragment {
         rv_1.setLayoutManager(llm1);
 
         listaComidas_1 = new ArrayList<>();
-        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
-        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
+        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"),listaComidas_1);
+        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"),listaComidas_1);
 
-        RecyclerAdapter adapterComida_1 = new RecyclerAdapter(getContext(), listaComidas,1);
+        BuyAdapter adapterComida_1 = new BuyAdapter(getContext(), listaComidas_1);
         rv_1.setAdapter(adapterComida_1);
         return rootView;
     }

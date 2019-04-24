@@ -22,7 +22,7 @@ public class Comidas extends AppCompatActivity {
 //        adicionarComida(new Comida("https://scontent.flis1-1.fna.fbcdn.net/t31.0-8/10457406_446693658802041_6998969287042776197_o.jpg","Francesinha", "Blah", "1.50"));
 //        adicionarComida(new Comida("https://scontent.flis1-1.fna.fbcdn.net/t31.0-8/12240195_589998354471570_1228903458506469620_o.jpg", "Lombo Assado", "Blah", "-50"));
 //
-//        RecyclerAdapter adapterComida = new RecyclerAdapter(this, listaComidas,1);
+//        BuyAdapter adapterComida = new BuyAdapter(this, listaComidas,1);
 //        rv.setAdapter(adapterComida);
 //    }
 //

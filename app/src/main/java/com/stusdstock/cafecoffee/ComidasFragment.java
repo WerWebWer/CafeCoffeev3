@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ComidasFragment extends Fragment {
@@ -47,7 +46,7 @@ public class ComidasFragment extends Fragment {
 //        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
 //        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
 //
-//        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas);
+//        BuyAdapter adapterComida = new BuyAdapter(getContext(), listaComidas);
 //        rv.setAdapter(adapterComida);
 //        return rootView;
 //    }
@@ -66,33 +65,14 @@ public class ComidasFragment extends Fragment {
         rv.setLayoutManager(llm);
 
         listaComidas = new ArrayList<>();
-        for (i=0; i<3; i++){
-            adicionarComida(new Comida("file://drawable/ic_launcher_background","Francesinha", "Blah Blah","1,50"));
-
-        }
         adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
         adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), listaComidas,1);
+        BuyAdapter adapterComida = new BuyAdapter(getContext(), listaComidas);
         rv.setAdapter(adapterComida);
         return rootView;
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        linearLayout = (LinearLayout) view.findViewById(R.id.linearLayout);
-//
-//        FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////Create your Controls(UI widget, Button,TextView) and add into layout
-//
-//                Button btn = new Button(getActivity());
-//                btn.setText("LOL");
-//                btn.setBackgroundResource(R.drawable.stytle_button);
-//                btn.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-//                linearLayout.addView(btn);
-//            }
-//        });
     }
 }

@@ -58,11 +58,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/nameComida"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/nameComida"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -90,11 +90,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/nomeDescryption"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/nomeDescryption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

@@ -9,20 +9,9 @@ public class Data extends Application {
 
     public static ArrayList<Comida> shop_list = new ArrayList<Comida>();
 
-//    public void addShop(Comida a){
-//        shop_list.add(a);
-//    }
+    public void deleteItem(){
 
-//    public ArrayList<ArrayList<String>> getData(){
-//        ArrayList<String> element = new ArrayList<String>();
-////        element.add("erfer","erfer","erfer");
-////        element.add();
-//        element.add("erfer");
-//       // Menu.set(0, ArrayList<String>).set(0)="0";
-//                Menu.add(element);
-//        String[] st1 = {"12","2324","3","2123","14535","2323"};
-//        return Menu;
-//    }
+    }
 
 
 }

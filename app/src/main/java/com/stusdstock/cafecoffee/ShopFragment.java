@@ -1,7 +1,5 @@
 package com.stusdstock.cafecoffee;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -44,7 +42,7 @@ public class ShopFragment extends Fragment {
 //        listaComidas = new ArrayList<>();
 //        adicionarComida(new Comida(pho,"Francesinha", "Blah Blah","1,50"));
 //        adicionarComida(new Comida(pho, "Lombo Assado", "Blah Blah","-0.50"));
-        RecyclerAdapter adapterComida = new RecyclerAdapter(getContext(), Data.shop_list,2);
+        BuyAdapter adapterComida = new BuyAdapter(getContext(), Data.shop_list);
         rv.setAdapter(adapterComida);
         return rootView;
     }
