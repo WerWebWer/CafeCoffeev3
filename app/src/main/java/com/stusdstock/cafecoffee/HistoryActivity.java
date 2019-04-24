@@ -20,4 +20,9 @@ public class HistoryActivity extends AppCompatActivity {
         fTrans.add(R.id.frgmHis, fragHis);
         fTrans.commit();
     }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }

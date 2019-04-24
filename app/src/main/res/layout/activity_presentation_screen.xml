@@ -13,22 +13,30 @@
     tools:context="com.stusdstock.cafecoffee.PresentationScreen">
 
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_weight="1"/>
     <ImageView
         android:id="@+id/logoCafeImageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:gravity="center"
         android:src="@drawable/ic_launcher" />
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:id="@+id/logoSubTextCafeImageView"
         android:layout_weight="1"
         android:layout_gravity="center"
         android:src="@drawable/cafesanckbar"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_weight="1"/>
     <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"

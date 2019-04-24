@@ -79,6 +79,34 @@ public class ContactsFragment extends Fragment {
                 });
         return builder.create();
     }
+
+    @NonNull
+    public Dialog onCreateDialog_rat(Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Rating")
+                .setMessage("От 50 до 100 ст.\n" +
+                        "Новичок(1%)\n" +
+                        "⬇\n" +
+                        "От 100 до 200\n" +
+                        "Бетховен(3%)\n" +
+                        "⬇\n" +
+                        "От 200 до 300\n" +
+                        "Сальвадор Дали(10%)\n" +
+                        "⬇\n" +
+                        "От 300 до 500\n" +
+                        "Вольтер (13%)\n" +
+                        "⬇\n" +
+                        "От 500 и больше\n" +
+                        "Петр 1 (15%)")
+                .setIcon(R.drawable.favourites)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Закрываем окно
+                        dialog.cancel();
+                    }
+                });
+        return builder.create();
+    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
@@ -155,8 +183,6 @@ public class ContactsFragment extends Fragment {
             public void onClick(View v)            {
                 Intent i = new Intent(getActivity(), Settings.class);
                 startActivity(i);
-
-
             }
         });
         ab = (Button) rootView.findViewById(R.id.button5);
@@ -175,14 +201,13 @@ public class ContactsFragment extends Fragment {
                 onCreateDialog(savedInstanceState1).show();
             }
         });
-//        TextView rat = (TextView) findViewById(R.id.rating);
-//        rat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(Intent.ACTION_DIAL, );
-//                startActivity(i);
-//            }
-//        });
+        rat = (TextView) rootView.findViewById(R.id.rating);
+        rat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCreateDialog_rat(savedInstanceState1).show();
+            }
+        });
         return rootView;
     }
     @Override
