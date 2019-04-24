@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="228dp"
     android:layout_height="180dp"
-    android:background="@drawable/shape_for_action"
+    android:background="@drawable/shape"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.747"
@@ -15,7 +14,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="208dp"
         android:layout_height="160dp"
-        android:background="@drawable/shape"
+        android:background="@drawable/shape_for_action"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
