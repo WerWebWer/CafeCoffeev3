@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1030386304626-ir4u3ojs5cd9blon8vidpk6qotug89jh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stusdstock.cafecoffee",
+            "certificate_hash": "54494d9043ac6e4eb84cd815aea9eeffe29e9751"
+          }
+        },
+        {
           "client_id": "1030386304626-hdg0b4ih5teoek2q00ef9ne0095k3bi0.apps.googleusercontent.com",
           "client_type": 3
         }

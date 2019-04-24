@@ -51,7 +51,6 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionAdapter.ViewHolder
                 Toast.makeText(mContext,"Пашол нахуй",Toast.LENGTH_LONG).show();
             }
         });
-
     }
 
     @Override

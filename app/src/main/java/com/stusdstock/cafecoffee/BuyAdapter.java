@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -54,6 +53,7 @@ public class BuyAdapter extends RecyclerView.Adapter<BuyAdapter.ViewHolder>{
                 Data.shop_list.add(item);
             }
         });
+        holder.imageComida.setBackgroundResource(R.drawable.fon);
 
     }
 
