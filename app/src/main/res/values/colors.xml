@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#865E1D</color>
-    <color name="colorPrimaryDark">#4154C0</color>
+    <color name="colorPrimary">#b39e68</color>
+    <color name="colorPrimaryDark">#8fb3c3</color>
     <color name="colorBro">#424242</color>
     <color name="colorAccent">#FF0000</color>
     <color name="holo_blue_light">#624d45</color>
-    <color name="trans">#FFFFFF</color>.
+    <color name="trans">#FFFFFF</color>
+    <color name="transGray">#f9f9f9</color>
+    <!--<color name="colorPasterBrown">#EBE5CE</color>-->
+    <color name="colorPasterBrown">#FFF8E0</color>
+
 </resources>

@@ -5,20 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/shape"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        card_view:cardBackgroundColor="#FFFfFFFf"
+        android:layout_height="match_parent"
+        android:radius="5dp"
+        card_view:cardBackgroundColor="@color/colorPasterBrown"
         card_view:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -27,15 +28,15 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_margin="6dp"
-                android:src="@drawable/cafesanckbar"
-                android:layout_weight="0.60" />
+                android:layout_weight="0.60"
+                android:src="@drawable/cafesanckbar" />
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
@@ -62,11 +63,12 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
+
 
                     <View
                         android:layout_width="0dp"
@@ -74,18 +76,11 @@
                         android:layout_weight="2" />
 
                     <Button
-                        android:id="@+id/price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/trans"
-                        android:text=""
-                        android:textSize="10sp" />
-
-                    <Button
                         android:id="@+id/delete"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:background="@color/trans"
                         android:text="lol"
                         android:textSize="10sp" />

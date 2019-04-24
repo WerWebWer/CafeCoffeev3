@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -27,7 +29,6 @@ public class PresentationScreen extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         prefs = getSharedPreferences("com.mycompany.myAppName", MODE_PRIVATE);
-
         setContentView(R.layout.activity_presentation_screen);
         imageViewLogo = (ImageView) findViewById(R.id.logoCafeImageView);
         imageViewLogoSubText = (ImageView) findViewById(R.id.logoSubTextCafeImageView);
