@@ -8,15 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-
-import java.util.Timer;
 
 public class PresentationScreen extends AppCompatActivity {
 
@@ -57,7 +53,7 @@ public class PresentationScreen extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent i = new Intent(PresentationScreen.this, MainActivity.class);
+                        Intent i = new Intent(PresentationScreen.this, LoginActivity.class); // was MainActivity
                         startActivity(i);
                         finish();
                     }

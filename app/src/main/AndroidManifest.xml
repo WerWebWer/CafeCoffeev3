@@ -4,13 +4,19 @@
     android:versionCode="1"
     android:versionName="1.0">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HistoryActivity"></activity>
+
+        <activity android:name=".HistoryActivity" />
         <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings"
@@ -19,6 +25,11 @@
             android:name=".ShopActivity"
             android:label="@string/title_activity_shop_activitu"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+        </activity>
         <activity
             android:name=".PresentationScreen"
             android:theme="@style/AppTheme.NoActionBar">
