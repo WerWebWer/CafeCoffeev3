@@ -28,9 +28,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -88,13 +85,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        mAuth = FirebaseAuth.getInstance();
+        //mAuth = FirebaseAuth.getInstance();
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
@@ -105,26 +105,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onStart(){
         super.onStart();
-        if (mAuth.getCurrentUser() != null) {
-            // Already signed in
-            // Do nothing
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        } else {
-            mAuth.signInWithEmailAndPassword(mEmailView.toString(), mPasswordView.toString())//TODO ХЗ вроде должно работать, не проверял
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // User signed in successfully
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(i);
-                            finish();
-                        }
-                    }
-                });
-        }
+//        if (mAuth.getCurrentUser() != null) {
+//            // Already signed in
+//            // Do nothing
+//            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+//            startActivity(i);
+//            finish();
+//        } else {
+//            mAuth.signInWithEmailAndPassword(mEmailView.toString(), mPasswordView.toString())//TODO ХЗ (нужно TextUtils) вроде должно работать, не проверял
+//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            // User signed in successfully
+//                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+//                            startActivity(i);
+//                            finish();
+//                        }
+//                    }
+//                });
+//        }
     }
 
     private void populateAutoComplete() {

@@ -2,7 +2,6 @@ package com.stusdstock.cafecoffee;
 
 import android.app.Application;
 import android.content.Context;
-import android.view.LayoutInflater;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,5 @@ public class Data extends Application {
     public void Crutch (Context context, List<Comida> comidas){
         ShopListAdapter a = new ShopListAdapter(context,comidas);
     }
-
-
 
 }

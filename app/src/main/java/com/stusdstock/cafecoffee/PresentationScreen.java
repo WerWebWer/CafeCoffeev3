@@ -53,7 +53,7 @@ public class PresentationScreen extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent i = new Intent(PresentationScreen.this, LoginActivity.class); // was MainActivity
+                        Intent i = new Intent(PresentationScreen.this, LoginActivity.class); // was MainActivity  LoginActivity
                         startActivity(i);
                         finish();
                     }
